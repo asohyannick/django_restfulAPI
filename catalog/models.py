@@ -88,6 +88,10 @@ class BookInstance(models.Model):
         default='m',
         help_text='Book availability',
     )
+    class Meta:
+        # …
+        permissions = (("can_mark_returned", "Set book as returned"),)
+
 
     class Meta:
         ordering = ['due_back']
